@@ -4,4 +4,19 @@
 
 ### Development
 
-We use 
+We use Ruby on Rails, Sass 3.2
+
+DB: PostgreSQL
+DB-Name: simpledone
+
+#### Install the Gems
+
+```
+bundle install
+```
+
+#### Run Locally
+
+```
+rails server
+```

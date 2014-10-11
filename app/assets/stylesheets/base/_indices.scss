@@ -1,0 +1,25 @@
+// z-index management is managed by Sass Index Method
+// Sass starts its index from '1' and not '0', so no problem of encountering a z-index: 0;
+// sass-lang.com/documentation/Sass/Script/Functions.html#index-instance_method
+
+// USAGE
+// .myclass { z-index: z-index($z-indices, index); }
+
+// multi-level indices can be used too.
+
+// $elements: project-covers, user-tooltip, sorting-bar, modals, navigation;
+// $modal-elements: fields, form-controls, errors, autocomplete-dropdown;
+
+// .modal {
+//    z-index: index($elements, modals);
+
+//    .field {
+//       z-index: index($modal-elements, fields);
+//    }
+//    .form-controls {
+//       z-index: index($modal-elements, form-controls);
+//    }
+// }
+
+$z-indices:
+;

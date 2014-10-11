@@ -1,11 +1,9 @@
 @charset "UTF-8";
 /*!
  *
- * SimpleDone
- * The app for the Salesforce $1Million Hackathon
+ * Tuul
+ * http://tuul.com
  *
- * Brajeshwar
- * http://brajeshwar.me
  *
 **/
 
@@ -13,12 +11,9 @@
 // STYLE CORE
 // ----------------------------------------------
 
-@import "base/config";
-@import "base/config-bootstrap";
-
 // frameworks and libraries
-// @import "bootstrap-sprockets";
-@import "modules/bootstrap";
+@import "bourbon/dist/bourbon";
+@import "neat/app/assets/stylesheets/neat";
 
 // functions, mixins, placeholders
 @import "functions/functions";
@@ -26,15 +21,28 @@
 @import "placeholders/placeholders";
 
 // base
-// @import "base/scaffold";
+@import "normalize-scss/normalize";
+@import "base/config";
+@import "base/scaffold";
 
 // modules
-// @import "modules/typography";
+@import "modules/typography";
+@import "modules/gradients";
 
 // layout
 @import "layout/core";
-@import "layout/header";
-@import "layout/footer";
+
+// ----------------------------------------------
+// APP MODULES AND COMPONENTS
+// ----------------------------------------------
+
+// app module style files
+@import "styleguide/styles/main";
+@import "login/styles/main";
+@import "admin/styles/main";
+@import "csr/styles/main";
+@import "customer/styles/main";
+
 
 // ----------------------------------------------
 // HELPERS

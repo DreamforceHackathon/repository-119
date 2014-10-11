@@ -1,0 +1,75 @@
+$card-border-radius: $border-radius-base !default;
+$card-spacing: 12px !default;
+$card-spacing-vertical: $card-spacing !default;
+$card-spacing-horizontal: $card-spacing !default;
+
+// the universal card interface
+.card {
+  background: $white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 1px 1px;
+  border-radius: $card-border-radius;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.card__body {
+  margin: $card-spacing-vertical $card-spacing-horizontal;
+}
+
+.card__header {
+  border-top-left-radius: $card-border-radius;
+  border-top-right-radius: $card-border-radius;
+  padding: $card-spacing-vertical $card-spacing-horizontal;
+}
+
+.card__footer {
+  border-bottom-left-radius: $card-border-radius;
+  border-bottom-right-radius: $card-border-radius;
+  padding: $card-spacing-vertical $card-spacing-horizontal;
+}
+
+.card__title {
+  font-size: $font-size-h3;
+  padding: $card-spacing-vertical 0 0;
+  margin: 0;
+}
+
+.card__stacks {
+  box-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px;
+
+  &:before, &:after {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: darken($white, 2%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 1px 1px;
+    border-radius: $card-border-radius;
+  }
+
+  &:before {
+    z-index: -101;
+    top: 7px;
+    right: 2px;
+
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  &:after {
+    z-index: -102;
+    top: 0;
+    right: -3px;
+
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+  }
+}

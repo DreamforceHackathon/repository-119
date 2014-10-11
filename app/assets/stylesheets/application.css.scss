@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*!
+ *
+ * SimpleDone
+ * The app for the Salesforce $1Million Hackathon
+ *
+ * Brajeshwar
+ * http://brajeshwar.me
+ *
+**/
+
+// ----------------------------------------------
+// STYLE CORE
+// ----------------------------------------------
+
+@import "base/config";
+@import "base/config-bootstrap";
+
+// frameworks and libraries
+// @import "bootstrap-sprockets";
+@import "modules/bootstrap";
+
+// functions, mixins, placeholders
+@import "functions/functions";
+@import "mixins/mixins";
+@import "placeholders/placeholders";
+
+// base
+@import "base/scaffold";
+
+// modules
+@import "modules/card";
+@import "modules/item";
+@import "modules/task";
+@import "modules/slider";
+
+// layout
+@import "layout/core";
+@import "layout/header";
+@import "layout/footer";
+
+// ----------------------------------------------
+// HELPERS
+// ----------------------------------------------
+
+// utilities
+// always have this at the last of the style cascade to over-write any earlier style declaration
+@import "utilities/utilities";
+
+// shame [hacks that needs to be fixed]
+@import "utilities/shame";
+
+// debug
+// commment/un-comment to debug
+// @import "utilities/debug";

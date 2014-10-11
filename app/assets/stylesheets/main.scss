@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/*!
+ *
+ * Tuul
+ * http://tuul.com
+ *
+ *
+**/
+
+// ----------------------------------------------
+// STYLE CORE
+// ----------------------------------------------
+
+// frameworks and libraries
+@import "bourbon/dist/bourbon";
+@import "neat/app/assets/stylesheets/neat";
+
+// functions, mixins, placeholders
+@import "functions/functions";
+@import "mixins/mixins";
+@import "placeholders/placeholders";
+
+// base
+@import "normalize-scss/normalize";
+@import "base/config";
+@import "base/scaffold";
+
+// modules
+@import "modules/typography";
+@import "modules/gradients";
+
+// layout
+@import "layout/core";
+
+// ----------------------------------------------
+// APP MODULES AND COMPONENTS
+// ----------------------------------------------
+
+// app module style files
+@import "styleguide/styles/main";
+@import "login/styles/main";
+@import "admin/styles/main";
+@import "csr/styles/main";
+@import "customer/styles/main";
+
+
+// ----------------------------------------------
+// HELPERS
+// ----------------------------------------------
+
+// utilities
+// always have this at the last of the style cascade to over-write any earlier style declaration
+@import "utilities/utilities";
+
+// shame [hacks that needs to be fixed]
+@import "utilities/shame";
+
+// debug
+// commment/un-comment to debug
+// @import "utilities/debug";

@@ -1,0 +1,77 @@
+$slider-height: 20px !default;
+$slider-handle-width: 30px;
+$slider-handle-color: $white;
+
+.range-bar {
+  @include gradient-horizontal($color-brand-accent, $color-brand-primary, $start-percent: 0%, $end-percent: 100%);
+  background-color: #a9acb1;
+  border-radius: $border-radius-base;
+  display: block;
+  height: $slider-height;
+  position: relative;
+  width: 100%;
+}
+
+.range-quantity {
+  background-color: transparent;
+  border-top-left-radius: $border-radius-base;
+  border-bottom-left-radius: $border-radius-base;
+  display: block;
+  height: 100%;
+  width: 0;
+}
+
+.range-handle {
+  background-color: $slider-handle-color;
+  border-radius: 9999em;
+  cursor: move;
+  height: $slider-handle-width;
+  width: $slider-handle-width;
+  left: 0;
+  top: -($slider-height/3.5);
+  position: absolute;
+
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.range-min,
+.range-max {
+  color: #181819;
+  font-size: 12px;
+  height: 20px;
+  padding-top: 4px;
+  position: absolute;
+  text-align: center;
+  top: -9px;
+  width: 24px;
+}
+
+.range-min {
+  left: -30px;
+}
+
+.range-max {
+  right: -30px;
+}
+
+/**
+ * Style for disabling text selection on handle move.
+ */
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/**
+ * Style for handle cursor on disabled slider.
+ */
+
+.range-disabled {
+  cursor: default;
+}

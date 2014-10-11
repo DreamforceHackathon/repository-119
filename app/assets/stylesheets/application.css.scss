@@ -26,11 +26,13 @@
 @import "placeholders/placeholders";
 
 // base
+@import "base/scaffold";
 
 // modules
 @import "modules/card";
 @import "modules/item";
 @import "modules/task";
+@import "modules/slider";
 
 // layout
 @import "layout/core";

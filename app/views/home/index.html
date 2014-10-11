@@ -5,7 +5,7 @@
         <div class="card__header">
           <form action="" method="get" accept-charset="utf-8">
             <div class="form-group">
-              <input type="text" class="form-control input-lg" id="" placeholder="Enter a new task" autofocus>
+              <input type="text" class="form-control input-lg" id="" placeholder="What would you like to get done?" autofocus>
             </div>
           </form>
         </div>
@@ -13,7 +13,7 @@
           <aside class="task-time">
             <div class="btn-group btn-group-justified">
               <div class="btn-group">
-                <button type="button" class="btn btn-info active">Today</button>
+                <button type="button" class="btn btn-warning active">Today</button>
               </div>
               <div class="btn-group">
                 <button type="button" class="btn btn-info">Tomorrow</button>
@@ -23,9 +23,14 @@
               </div>
             </div>
           </aside>
+          <aside class="task-slider">
+            <div class="slider-wrapper">
+              <input type="text" class="js-hiderange">
+            </div>
+          </aside>
         </div>
         <div class="card__footer">
-          <button type="button" class="btn btn-success btn-lg btn-block"><i class="glyphicon glyphicon-ok-sign"></i> Save & Add</button>
+          <button type="button" class="btn btn-success btn-lg btn-block"><i class="glyphicon glyphicon-ok-sign"></i> Save & Add New</button>
         </div>
       </div>
     </div>

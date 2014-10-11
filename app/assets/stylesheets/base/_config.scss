@@ -63,7 +63,7 @@ $color-success             : $green;
 //
 $color-body-text           : #3a3a3a;
 $color-body-text-reverse   : $color-gray-lighter;
-$color-body-background     : $color-brand-light;
+$color-body-background     : darken($color-brand-light, 5%);
 $color-border              : $color-gray-lighter;
 
 // links

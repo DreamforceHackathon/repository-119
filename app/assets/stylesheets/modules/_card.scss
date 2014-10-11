@@ -54,11 +54,11 @@ $card-spacing-horizontal: $card-spacing !default;
     top: 7px;
     right: 2px;
 
-    -webkit-transform: rotate(4deg);
-    -moz-transform: rotate(4deg);
-    -o-transform: rotate(4deg);
-    -ms-transform: rotate(4deg);
-    transform: rotate(4deg);
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
   }
 
   &:after {
@@ -66,10 +66,10 @@ $card-spacing-horizontal: $card-spacing !default;
     top: 0;
     right: -3px;
 
-    -webkit-transform: rotate(-4deg);
-    -moz-transform: rotate(-4deg);
-    -o-transform: rotate(-4deg);
-    -ms-transform: rotate(-4deg);
-    transform: rotate(-4deg);
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    transform: rotate(-2deg);
   }
 }

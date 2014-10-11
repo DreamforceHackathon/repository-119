@@ -27,3 +27,18 @@ $items-color: $color-brand-dark;
     margin-right: $items-spacing;
   }
 }
+
+.item__timer {
+  font-family: $font-family-serif;
+  background: $color-brand-primary;
+  border-radius: $border-radius-base;
+  color: $white;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 1px 1px;
+  font-size: $font-size-h1*5;
+
+  .progress-bar {
+    height: 100px !important;
+    text-align: center !important;
+  }
+}

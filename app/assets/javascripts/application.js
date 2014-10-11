@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// Hide range.
+var hide = document.querySelector('.js-hiderange');
+var initHideRange = new Powerange(hide, { hideRange: true, start: 70 });

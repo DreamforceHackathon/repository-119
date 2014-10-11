@@ -1,1 +1,7 @@
 .task-time {}
+
+.task-slider {
+  @include clearfix;
+  position: relative;
+  margin: $line-height-computed 0;
+}

@@ -1,0 +1,35 @@
+$card-border-radius: $border-radius-base !default;
+$card-spacing: 12px !default;
+$card-spacing-vertical: $card-spacing !default;
+$card-spacing-horizontal: $card-spacing !default;
+
+// the universal card interface
+.card {
+  background: $white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 1px 1px;
+  border-radius: $card-border-radius;
+  padding: 0;
+  margin: 0;
+}
+
+.card__body {
+  margin: $card-spacing-vertical $card-spacing-horizontal;
+}
+
+.card__header {
+  border-top-left-radius: $card-border-radius;
+  border-top-right-radius: $card-border-radius;
+  padding: $card-spacing-vertical $card-spacing-horizontal;
+}
+
+.card__footer {
+  border-bottom-left-radius: $card-border-radius;
+  border-bottom-right-radius: $card-border-radius;
+  padding: $card-spacing-vertical $card-spacing-horizontal;
+}
+
+.card__title {
+  font-size: $font-size-h3;
+  padding: $card-spacing-vertical 0;
+  margin: 0;
+}

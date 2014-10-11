@@ -11,8 +11,17 @@ class TasksController < ApplicationController
   def create
     name = params[:name]
     description = params[:description]
+    weightage = params[:weightage] || 5
     status = 'active'
-    Task.create(name: name, description: description, status: status)
+    if params[:employee_id]
+      employee_id = params[:employee_id]
+      Task.create(name: name, description: description, status: status,
+                  employee_id: employee_id.to_i, weightage: weightage.to_i)
+      TaskDispatcher.new(employee.to_i).resort
+    else
+      Task.create(name: name, description: description, status: status,
+                  weightage: weightage.to_i)
+    end
     head 200
   end
 
@@ -30,9 +39,11 @@ class TasksController < ApplicationController
     return head 302 unless task
     task.name = params[:name] if params[:name]
     task.description = params[:description] if params[:description]
-    task.staus = params[:status] if params[:status]
+    task.status = params[:status] if params[:status]
+    task.weightage = params[:weightage].to_i if params[:weightage]
     task.employee_id = params[:employee_id].to_i if params[:employee_id]
     task.save
+    TaskDispatcher.new(employee.to_i).resort
     head 200
   end
 

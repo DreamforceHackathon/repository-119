@@ -29,7 +29,9 @@
 // @import "base/scaffold";
 
 // modules
-// @import "modules/typography";
+@import "modules/card";
+@import "modules/item";
+@import "modules/task";
 
 // layout
 @import "layout/core";

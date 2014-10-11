@@ -1,0 +1,29 @@
+$items-spacing: $padding-base-vertical;
+$items-color: $color-brand-dark;
+
+.items {}
+
+.items__list {
+
+  li {}
+
+  a {
+    display: block;
+    padding: $items-spacing*2 $items-spacing;
+    color: $items-color;
+    text-decoration: none;
+    border-bottom: 1px solid $color-gray-lighter;
+
+    &:hover, &:focus {
+      color: $color-brand-primary;
+      background: $color-gray-lighter;
+      border-color: $color-gray;
+      text-decoration: none;
+    }
+  }
+
+  i {
+    color: lighten($items-color, 50%);
+    margin-right: $items-spacing;
+  }
+}

@@ -9,7 +9,7 @@
           <aside class="items">
           <ul class="items__list list-unstyled">
             <% @tasks.each do |task| %>
-            <li class="empoloyee-task"><a href=""><i class="glyphicon glyphicon-chevron-right"></i><%= task.name %></a></li>
+            <li class="empoloyee-task"><a href="/employees/<%= @employee.id %>/edit?task_id=<%= task.id %>"><i class="glyphicon glyphicon-chevron-right"></i><%= task.name %></a></li>
             <% end %>
             </ul>
           </aside>

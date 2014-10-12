@@ -3,6 +3,7 @@ $(function() {
   var hide = document.querySelector('.js-hiderange');
   var initHideRange = new Powerange(hide, { hideRange: true, start: 70 });
 
+  var btnChoice = 1;
   /* Function buttons Active */
   $(".tmr").click(function(e){
     $(".tmr").addClass("active btn-warning");
@@ -10,6 +11,7 @@ $(function() {
     $(".tod").addClass("btn-info");
     $(".lat").removeClass("active btn-warning");
     $(".lat").addClass("btn-info");
+	  btnChoice = 2;
   });
 
   $(".tod").click(function(){
@@ -18,6 +20,7 @@ $(function() {
     $(".tmr").addClass("btn-info");
     $(".lat").removeClass("btn-warning active");
     $(".lat").addClass("btn-info");
+	  btnChoice = 1;
   });
 
   $(".lat").click(function(){
@@ -26,6 +29,7 @@ $(function() {
     $(".tod").addClass("btn-info");
     $(".tmr").removeClass("active btn-warning");
     $(".tmr").addClass("btn-info");
+	  btnChoice = 3;
   });
   
   $('section.task input[name=assignee]').autocomplete({
@@ -42,9 +46,9 @@ $(function() {
           assignee: assignee,
           due_date: date}
       }).success(function(data) {
-        console.log('Yes posted the task');
+        swal("Nice!", "You clicked the button!", "success")
       }).error(function(jqxhr, status) {
-        console.log('Something went wrong', status);
+	      sweetAlert("Oops...", "Something went wrong.", "error");
       });
     };
     return {

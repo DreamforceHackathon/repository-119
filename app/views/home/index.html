@@ -1,14 +1,14 @@
-<section id="assigner" class="container">
+<section id="assigner" class="container task">
   <div class="row">
     <div class="col-xs-12">
       <div class="card">
         <div class="card__header">
-          <form action="" method="get" accept-charset="utf-8">
+          <form method="get" accept-charset="utf-8" class="task-form">
             <div class="form-group">
-              <input type="text" class="form-control input-lg" id="" placeholder="What would you like to get done?" autofocus>
+              <input type="text" name="title" class="form-control input-lg" id="" placeholder="What would you like to get done?" autofocus>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control input-lg" id="" placeholder="Assign this to someone.">
+              <input type="text" class="form-control input-lg" id="" placeholder="Assign this to someone." name="assignee">
             </div>
           </form>
         </div>
@@ -28,12 +28,12 @@
           </aside>
           <aside class="task-slider">
             <div class="slider-wrapper">
-              <input type="text" class="js-hiderange">
+              <input type="text" class="js-hiderange weightage">
             </div>
           </aside>
         </div>
         <div class="card__footer">
-          <button type="button" class="btn btn-success btn-lg btn-block"><i class="glyphicon glyphicon-ok-sign"></i> Save & Add New</button>
+          <button type="button" class="btn btn-success btn-lg btn-block save-task"><i class="glyphicon glyphicon-ok-sign"></i> Save & Add New</button>
         </div>
       </div>
     </div>

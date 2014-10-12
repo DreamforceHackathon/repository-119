@@ -10,8 +10,8 @@ class TaskDispatcher
     num_items = tasks.count
     Rails.logger.info("Current task count is #{num_items}")
     tasks.each do |t|
-      t.weightage ||= 5
-      t.quadrant = t.weightage / 3
+      t.weightage ||= 1
+      t.quadrant = (t.weightage-1)/25
       t.priority = num_items
       num_items = num_items - 1
       Rails.logger.info(

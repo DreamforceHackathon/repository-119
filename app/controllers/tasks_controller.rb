@@ -24,16 +24,13 @@ class TasksController < ApplicationController
       due_date = Time.now() + 5.days
     end
     status = 'active'
-    if params[:employee_id]
-      employee_id = params[:employee_id]
-      Task.create(name: name, description: description, status: status,
-                  employee_id: employee_id.to_i, weightage: weightage.to_i,
-                  due_date: due_date)
-      TaskDispatcher.new(employee.to_i).resort
-    else
-      Task.create(name: name, description: description, status: status,
-                  weightage: weightage.to_i, due_date: due_date)
-    end
+    employee = params[:assignee] || 'John Varghese'
+    employee = Employee.where(name: employee)
+    employee = Employee.where(name: 'John Varghese') if employee.size == 0
+    Task.create(name: name, description: description, status: status,
+                employee: employee.first, weightage: weightage.to_i,
+                due_date: due_date)
+    TaskDispatcher.new(employee.first.id).resort
     head 200
   end
 
@@ -52,22 +49,27 @@ class TasksController < ApplicationController
     task.name = params[:name] if params[:name]
     task.description = params[:description] if params[:description]
     task.status = params[:status] if params[:status]
+    current_date = Time.now()
+    current_date += current_date.seconds_until_end_of_day.seconds
     if (due_date = params[:due_date])
       if due_date == 'today'
-        due_date = Time.now()
+        due_date = current_date
       elsif due_date == 'tomorrow'
-        due_date == Time.now() + 1.day
+        due_date == current_date + 1.day
       else due_date == 'later'
-        due_date = Time.now() + 5.days
+        due_date = current_date + 5.days
       end
       task.due_date = due_date
     else
-      task.due_date = Time.now() + 5.days
+      task.due_date = current_date + 5.days
     end
     task.weightage = params[:weightage].to_i if params[:weightage]
-    task.employee_id = params[:employee_id].to_i if params[:employee_id]
+    employee = params[:assignee] || 'John Varghese'
+    employee = Employee.where(name: employee)
+    employee = Employee.where(name: 'John Varghese') if employee.size == 0
+    task.employee = employee
     task.save
-    TaskDispatcher.new(employee.to_i).resort
+    TaskDispatcher.new(employee.first.id).resort
     head 200
   end
 

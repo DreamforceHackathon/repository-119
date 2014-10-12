@@ -28,6 +28,9 @@ $(function() {
     $(".tmr").addClass("btn-info");
   });
   
+  $('section.task input[name=assignee]').autocomplete({
+    source: Employees})
+
   var task_manager = (function() {
     var create_task = function(date, task_name, assignee, weightage) {
       $.ajax({

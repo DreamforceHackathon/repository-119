@@ -1,3 +1,7 @@
+<script>
+  var Employees = ['John Varghese', 'Sam Varghese'];
+</script>
+  
 <section id="assigner" class="container task">
   <div class="row">
     <div class="col-xs-12">
@@ -8,7 +12,7 @@
               <input type="text" name="title" class="form-control input-lg" id="" placeholder="What would you like to get done?" autofocus>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control input-lg" id="" placeholder="Assign this to someone." name="assignee">
+              <input type="text" class="form-control input-lg" id="" placeholder="Assign this to someone." name="assignee" data-provide="typeahead">
             </div>
           </form>
         </div>
@@ -47,18 +51,14 @@
     <div class="col-xs-12">
       <div class="card">
         <div class="card__header">
-          <h2 class="card__title">Title of the Card</h2>
+          <h2 class="card__title"><%= @employee.name %></h2>
         </div>
         <div class="card__body">
           <aside class="items">
-            <ul class="items__list list-unstyled">
-              <li><a href=""><i class="glyphicon glyphicon-chevron-right"></i> Pharetra Magna Sollicitudin Sit Ipsum</a></li>
-              <li><a href=""><i class="glyphicon glyphicon-chevron-right"></i> Ornare Malesuada Sem Purus Cursus</a></li>
-              <li><a href=""><i class="glyphicon glyphicon-chevron-right"></i> Venenatis Inceptos Pharetra Ornare</a></li>
-              <li><a href=""><i class="glyphicon glyphicon-chevron-right"></i> Condimentum Ultricies Ornare Quam</a></li>
-              <li><a href=""><i class="glyphicon glyphicon-chevron-right"></i> Pharetra Malesuada Fringilla Dolor</a></li>
-              <li><a href=""><i class="glyphicon glyphicon-chevron-right"></i> Cras Egestas Nibh</a></li>
-              <li><a href=""><i class="glyphicon glyphicon-chevron-right"></i> Ullamcorper Fusce Dapibus Fringilla</a></li>
+          <ul class="items__list list-unstyled">
+            <% @tasks.each do |task| %>
+            <li class="empoloyee-task"><a href=""><i class="glyphicon glyphicon-chevron-right"></i><%= task.name %></a></li>
+            <% end %>
             </ul>
           </aside>
         </div>

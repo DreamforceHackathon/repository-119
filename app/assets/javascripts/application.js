@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.autocomplete
 //= require turbolinks
 //= require_tree .
 
@@ -219,5 +220,3 @@ $(".stop").click(function(){
 //GET THE POMODORO NUMBER AND POST IN THE SERVER
 
 });
-
-

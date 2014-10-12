@@ -46,7 +46,7 @@ $(function() {
           assignee: assignee,
           due_date: date}
       }).success(function(data) {
-        swal("Nice!", "You clicked the button!", "success")
+        swal("Nice!", "You Scheduled a Task!", "success")
       }).error(function(jqxhr, status) {
 	      sweetAlert("Oops...", "Something went wrong.", "error");
       });

@@ -10,7 +10,9 @@ $(function() {
 
   var ifCancelled = 0;
   $(".start").click(function() {
-    var ifCancelled = 0;
+    ifCancelled = 0;
+    $('section#assignee-task-item button.start span.s-message').text('Started');
+    $('section.assignee-task-item button.start').toggleClass('active');
     $(".item__timer").css("background","#f16a70");
     var tirthMinutes = 60 * 30,
       display = $('#time'),
@@ -18,6 +20,7 @@ $(function() {
       exit = pomodoroCounter;
     
     var interval = setInterval(function() {
+      console.log('In interval ', ifCancelled);
       mins = parseInt(tirthMinutes / 60);
       seconds = parseInt(tirthMinutes % 60);
       seconds = (seconds < 10) ? "0" + seconds : seconds;
@@ -33,7 +36,7 @@ $(function() {
         } else {
           document.getElementById("timer").innerHTML = "Done!";
           if (pomodoroCounter == exit){
-            pomodoroCounter ++;
+            pomodoroCounter++;
             pomodoroDisplay();
             count++
             function stopUpdating(){
@@ -45,6 +48,7 @@ $(function() {
         }
       }
       if (ifCancelled > 0) {
+        console.log('I am cancelled');
         function stopUpdating(){
           clearInterval(interval);
         }
@@ -54,14 +58,16 @@ $(function() {
   });
 
   $(".stop").click(function(){
-    ifCancelled++
+    console.log('Stop clicked');
+    $('section#assignee-task-item button.start span.s-message').text('Start');
+    ifCancelled++;
     document.getElementById("timer").innerHTML = "CANCELED";
     sweetAlert(
       "Oops...", "So you got interrupted, lets try it again!", "error");
   });
 
   /* END OF POMODORO FUNCTION */
-  (".finish").click(function() {
+  $(".finish").click(function() {
 
   //GET THE POMODORO NUMBER AND POST IN THE SERVER
   });

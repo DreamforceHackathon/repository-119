@@ -20,7 +20,6 @@ $(function() {
       exit = pomodoroCounter;
     
     var interval = setInterval(function() {
-      console.log('In interval ', ifCancelled);
       mins = parseInt(tirthMinutes / 60);
       seconds = parseInt(tirthMinutes % 60);
       seconds = (seconds < 10) ? "0" + seconds : seconds;
@@ -48,7 +47,6 @@ $(function() {
         }
       }
       if (ifCancelled > 0) {
-        console.log('I am cancelled');
         function stopUpdating(){
           clearInterval(interval);
         }
@@ -58,7 +56,6 @@ $(function() {
   });
 
   $(".stop").click(function(){
-    console.log('Stop clicked');
     $('section#assignee-task-item button.start span.s-message').text('Start');
     ifCancelled++;
     document.getElementById("timer").innerHTML = "CANCELED";

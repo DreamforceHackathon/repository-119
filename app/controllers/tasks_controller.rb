@@ -12,18 +12,8 @@ class TasksController < ApplicationController
     name = params[:name]
     description = params[:description]
     weightage = params[:weightage] || 5
-    if (due_date = params[:due_date])
-      if due_date == 'today'
-        due_date = Time.now()
-      elsif due_date == 'tomorrow'
-        due_date == Time.now() + 1.day
-      else due_date == 'later'
-        due_date = Time.now() + 5.days
-      end
-    else
-      due_date = Time.now() + 5.days
-    end
     status = 'active'
+    due_date = rounded_date(params[:due_date])
     employee = params[:assignee] || 'John Varghese'
     employee = Employee.where(name: employee)
     employee = Employee.where(name: 'John Varghese') if employee.size == 0
@@ -49,20 +39,7 @@ class TasksController < ApplicationController
     task.name = params[:name] if params[:name]
     task.description = params[:description] if params[:description]
     task.status = params[:status] if params[:status]
-    current_date = Time.now()
-    current_date += current_date.seconds_until_end_of_day.seconds
-    if (due_date = params[:due_date])
-      if due_date == 'today'
-        due_date = current_date
-      elsif due_date == 'tomorrow'
-        due_date == current_date + 1.day
-      else due_date == 'later'
-        due_date = current_date + 5.days
-      end
-      task.due_date = due_date
-    else
-      task.due_date = current_date + 5.days
-    end
+    task.due_date = rounded_date(params[:due_date])
     task.weightage = params[:weightage].to_i if params[:weightage]
     employee = params[:assignee] || 'John Varghese'
     employee = Employee.where(name: employee)
@@ -79,5 +56,19 @@ class TasksController < ApplicationController
     return head 302 unless task
     task.destroy
     head 200
+  end
+
+  private
+  def rounded_date(p_date)
+    current_date = Time.at(Time.now().to_f.floor)
+    current_date += current_date.seconds_until_end_of_day.seconds
+    if p_date == 'today'
+      due_date = current_date
+    elsif p_date == 'tomorrow'
+      due_date = current_date + 1.day
+    else p_date == 'later'
+      due_date = current_date + 5.days
+    end
+    due_date
   end
 end

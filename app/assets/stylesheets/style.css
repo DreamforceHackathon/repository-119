@@ -1,0 +1,13 @@
+.message {
+    display: none;
+    margin: 0 0 13px;
+    padding: 10px;
+    background-color: lightgreen;
+    -webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+.item__timer{
+	font-size: 5em;
+}
